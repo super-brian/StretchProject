@@ -210,6 +210,9 @@ export default (App = () => {
   // make the app prevent the phone from sleeping.
   useEffect(() => {
     KeepAwake.activate();
+    return () => {
+      KeepAwake.deactivate();
+    };
   }, []);
 
 	const fontFamily = Platform.OS === 'ios' ? 'Menlo' : 'monospace';
