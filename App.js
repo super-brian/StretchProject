@@ -238,7 +238,7 @@ export default (App = () => {
         {(state.sec < 10 ? '0' : null) + state.sec}
 			</Text>
 
-			{/* seconds and count */}
+			{/* count and seconds */}
 			<View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {/* <Text style={{ color: 'white', fontSize: buttonFontSize, marginLeft: 20 }}>
         Set :
@@ -255,7 +255,7 @@ export default (App = () => {
 					{state.count}-
 				</Text>
 				<Text style={[styles.textWhite, { fontFamily, fontSize }]}>
-					{state.seconds}
+					{state.seconds < 60 ? state.seconds : Math.floor(state.seconds / 60) + ':' + (state.seconds % 60)}
 				</Text>
 			</View>
 
